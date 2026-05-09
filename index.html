@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriBotGH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="new-conversation-button" type="button" aria-label="Start new conversation" title="Start new conversation">📝</button>
+        <button class="mobile-menu-button" aria-label="Open sidebar">☰</button>
+        <span class="brand">
+          <span class="brand-icon">🌿</span>
+          <strong>AgriBotGH</strong>
+        </span>
+      </div>
+      <div class="topbar-center">
+        <span class="status-dot">●</span>
+        <span class="status-text">Online</span>
+      </div>
+      <div class="topbar-right">
+        <div class="mobile-language-toggle mobile-only"></div>
+        <button class="history-toggle-button" type="button" aria-label="Show conversation history" title="Conversation history">📋</button>
+        <button class="theme-toggle-button" type="button" aria-label="Switch to night theme">🌙</button>
+        <button class="clear-chat-button" type="button">Clear Chat</button>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <aside class="sidebar">
+        <div class="sidebar-brand">
+          <div class="sidebar-icon">🌾</div>
+          <div class="sidebar-title">AgriBotGH</div>
+        </div>
+        <div class="language-toggle" id="languageToggle">
+          <button type="button" class="lang-button active" data-lang="en">English</button>
+          <button type="button" class="lang-button" data-lang="tw">Twi</button>
+        </div>
+        <p class="sidebar-description">Ask me anything about farming — soil, pests, irrigation, harvesting and more.</p>
+        <div class="quick-questions">
+          <div class="quick-label">Try asking:</div>
+          <div class="chips">
+            <button type="button" class="chip">How do I treat leaf spot?</button>
+            <button type="button" class="chip">When should I plant maize?</button>
+            <button type="button" class="chip">How do I store my harvest?</button>
+            <button type="button" class="chip">What is the best fertilizer for tomatoes?</button>
+            <button type="button" class="chip">How do I improve my soil?</button>
+          </div>
+        </div>
+      </aside>
+
+      <section class="chat-area">
+        <div class="chat-content">
+          <div class="messages" id="messages"></div>
+        </div>
+        <div class="chat-input-bar">
+          <input id="chatInput" type="text" placeholder="Type your question here..." autocomplete="off">
+          <button id="voiceButton" type="button" class="voice-button" aria-label="Record voice message">
+            <svg class="voice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1c-1.657 0-3 1.343-3 3v7c0 1.657 1.343 3 3 3s3-1.343 3-3V4c0-1.657-1.343-3-3-3z"/>
+              <path d="M19 10c0 3.314-2.686 6-6 6s-6-2.686-6-6"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </button>
+          <button id="sendButton" type="button" class="send-button">Send</button>
+        </div>
+      </section>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    
+    <aside class="conversation-history">
+      <div class="history-header">
+        <h3>Conversations</h3>
+        <button class="history-close" type="button" aria-label="Close conversation history">✕</button>
+      </div>
+      <div class="conversation-list" id="conversationList">
+        <p class="empty-state">No conversations yet</p>
+      </div>
+    </aside>
+    
+    <div class="history-overlay" id="historyOverlay"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
